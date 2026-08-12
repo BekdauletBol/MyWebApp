@@ -22,7 +22,6 @@
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/scopedcss/bundle/MyWebPage.styles.css
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/scopedcss/projectbundle/MyWebPage.bundle.scp.css
-/Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/compressed/oc7g9kse5b-{0}-b9sayid5wm-b9sayid5wm.gz
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/compressed/afaya4sf1m-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/compressed/itlp0s13g2-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/compressed/a1h6sttwyc-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -96,3 +95,4 @@
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/MyWebPage.pdb
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/MyWebPage.genruntimeconfig.cache
 /Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/ref/MyWebPage.dll
+/Users/bekdauletbolatov/Desktop/MVC_project(asp.net)/MyWebPage/obj/Debug/net10.0/compressed/oc7g9kse5b-{0}-s35s3s76mk-s35s3s76mk.gz
