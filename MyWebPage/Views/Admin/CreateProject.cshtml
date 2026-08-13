@@ -1,0 +1,45 @@
+@model Project
+
+@{
+    ViewData["Title"] = "Новый проект";
+}
+
+<section class="admin-header">
+    <h1>Новый проект</h1>
+    <a asp-controller="Admin" asp-action="Projects" class="btn-outline">&larr; Назад</a>
+</section>
+
+<section class="feedback">
+    <form method="post" asp-controller="Admin" asp-action="CreateProject">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" placeholder="Название проекта" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" placeholder="Описание проекта..."></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label asp-for="TechStack"></label>
+                <input asp-for="TechStack" placeholder="C#, ASP.NET Core, SQLite" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Icon"></label>
+                <input asp-for="Icon" placeholder="&#127760;" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Url"></label>
+            <input asp-for="Url" placeholder="https://..." />
+        </div>
+        <button type="submit">Создать проект</button>
+    </form>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,44 @@
+@model List<BlogPost>
+
+@{
+    ViewData["Title"] = "Админка — Блог";
+}
+
+<section class="admin-header">
+    <h1>Админ-панель</h1>
+    <div class="admin-nav">
+        <a asp-controller="Admin" asp-action="Index" class="admin-link">Сообщения</a>
+        <a asp-controller="Admin" asp-action="Projects" class="admin-link">Проекты</a>
+        <a asp-controller="Admin" asp-action="Blog" class="admin-link active">Блог</a>
+    </div>
+    <a asp-controller="Admin" asp-action="CreatePost" class="btn" style="margin-left: auto;">+ Статья</a>
+</section>
+
+<section class="admin-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Заголовок</th>
+                <th>Тег</th>
+                <th>Дата</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Title</td>
+                    <td>@p.Tag</td>
+                    <td>@p.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td>
+                        <form method="post" asp-controller="Admin" asp-action="DeletePost" asp-route-id="@p.Id">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn-delete">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

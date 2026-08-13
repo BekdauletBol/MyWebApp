@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Отправлено";
+}
+
+<section class="hero" style="text-align: center;">
+    <span class="hero-label">Done</span>
+    <h1>Сообщение <span class="accent">отправлено</span></h1>
+    <p>Спасибо за обратную связь! Я постараюсь ответить в ближайшее время.</p>
+    <div class="hero-actions" style="justify-content: center;">
+        <a asp-controller="Home" asp-action="Index" class="btn">На главную</a>
+        <a asp-controller="Feedbacks" asp-action="Index" class="btn-outline">Ещё сообщение</a>
+    </div>
+</section>

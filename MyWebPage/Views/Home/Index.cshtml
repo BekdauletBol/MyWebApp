@@ -1,31 +1,34 @@
 ﻿@{
-    ViewData["Title"] = "Main Page";
+    ViewData["Title"] = "Главная";
 }
 
 <section class="hero">
-    <span class="hero-label">Welcome</span>
-    <h1>We build things<br />that <span class="accent">matter</span></h1>
-    <p>Creative solutions for modern problems. We turn ideas into reality with clean code and bold design.</p>
+    <span class="hero-label">Developer</span>
+    <h1>Привет, я <span class="accent">Бекдаулет</span></h1>
+    <p>Backend-разработчик на C# / ASP.NET Core. Создаю веб-приложения, которые работают быстро и выглядят хорошо.</p>
     <div class="hero-actions">
-        <a asp-controller="Feedbacks" asp-action="Index" class="btn">Get in touch</a>
-        <a href="#features" class="btn-outline">Learn more</a>
+        <a asp-controller="Projects" asp-action="Index" class="btn">Мои проекты</a>
+        <a asp-controller="Blog" asp-action="Index" class="btn-outline">Блог</a>
     </div>
 </section>
 
-<section class="features" id="features">
-    <div class="card">
-        <div class="card-icon">&#9881;</div>
-        <h3>Clean Code</h3>
-        <p>We write maintainable, well-structured code that scales with your business.</p>
+<section class="stats">
+    <div class="stat-card">
+        <span class="stat-number">4+</span>
+        <span class="stat-label">Проекта</span>
     </div>
-    <div class="card">
-        <div class="card-icon">&#9889;</div>
-        <h3>Fast Performance</h3>
-        <p>Optimized solutions that deliver speed and reliability at every level.</p>
+    <div class="stat-card">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Статьи</span>
     </div>
-    <div class="card">
-        <div class="card-icon">&#9733;</div>
-        <h3>Modern Design</h3>
-        <p>Bold, user-focused interfaces that look as good as they perform.</p>
+    <div class="stat-card">
+        <span class="stat-number">C#</span>
+        <span class="stat-label">Основной стек</span>
     </div>
+</section>
+
+<section class="home-cta">
+    <h2>Есть идея?</h2>
+    <p>Напишите мне, и мы обсудим ваш проект.</p>
+    <a asp-controller="Feedbacks" asp-action="Index" class="btn">Связаться</a>
 </section>

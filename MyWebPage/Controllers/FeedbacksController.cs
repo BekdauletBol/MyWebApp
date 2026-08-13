@@ -19,14 +19,21 @@ public class FeedbacksController : Controller
     }
 
     [HttpPost]
-    public IActionResult Check(Feedback contact)
+    [ValidateAntiForgeryToken]
+    public IActionResult Create(Feedback feedback)
     {
         if (ModelState.IsValid)
         {
-            _context.Feedbacks.Add(contact);
+            feedback.CreatedAt = DateTime.UtcNow;
+            _context.Feedbacks.Add(feedback);
             _context.SaveChanges();
-            return Redirect("/");
+            return RedirectToAction("Success");
         }
-        return View("Index", contact);
+        return View("Index", feedback);
+    }
+
+    public IActionResult Success()
+    {
+        return View();
     }
 }

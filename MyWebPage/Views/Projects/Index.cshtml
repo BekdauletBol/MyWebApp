@@ -1,0 +1,35 @@
+@model List<Project>
+
+@{
+    ViewData["Title"] = "Проекты";
+}
+
+<section class="hero">
+    <span class="hero-label">Projects</span>
+    <h1>Мои <span class="accent">проекты</span></h1>
+    <p>Приложения, которые я создал для обучения и практики.</p>
+</section>
+
+<section class="project-grid">
+    @foreach (var project in Model)
+    {
+        <div class="card project-card">
+            <div class="project-icon">@Html.Raw(project.Icon)</div>
+            <h3>@project.Title</h3>
+            <p>@project.Description</p>
+            @if (!string.IsNullOrEmpty(project.TechStack))
+            {
+                <div class="project-tech">
+                    @foreach (var tech in project.TechStack.Split(", "))
+                    {
+                        <span class="tag">@tech</span>
+                    }
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(project.Url))
+            {
+                <a href="@project.Url" target="_blank" class="btn-outline" style="margin-top: 16px; font-size: 12px;">Открыть &rarr;</a>
+            }
+        </div>
+    }
+</section>

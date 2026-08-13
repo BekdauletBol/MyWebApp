@@ -6,24 +6,28 @@ public class Feedback
 {
     public int Id { get; set; }
 
-    [Display(Name = "Введите Имя")]
-    [Required(ErrorMessage = "Вам нужно ввести имя")]
-    public string Name { get; set; }
+    [Display(Name = "Имя")]
+    [Required(ErrorMessage = "Введите имя")]
+    public required string Name { get; set; }
 
-    [Display(Name = "Введите Фамилию")]
-    [Required(ErrorMessage = "Вам нужно ввести фамилию")]
-    public string Surname { get; set; }
+    [Display(Name = "Фамилия")]
+    [Required(ErrorMessage = "Введите фамилию")]
+    public required string Surname { get; set; }
 
-    [Display(Name = "Укажите возраст")]
-    [Required(ErrorMessage = "Вам нужно ввести возраст")]
+    [Display(Name = "Возраст")]
+    [Required(ErrorMessage = "Укажите возраст")]
+    [Range(1, 120, ErrorMessage = "Некорректный возраст")]
     public int Age { get; set; }
 
-    [Display(Name = "Укажите почту")]
-    [Required(ErrorMessage = "Вам нужно ввести почту")]
-    public string Email { get; set; }
+    [Display(Name = "Почта")]
+    [Required(ErrorMessage = "Укажите почту")]
+    [EmailAddress(ErrorMessage = "Некорректный email")]
+    public required string Email { get; set; }
 
-    [Display(Name = "Укажите коммент")]
-    [Required(ErrorMessage = "Вам нужно ввести фидбек")]
-    [StringLength(30, ErrorMessage = "Текст не более 30 символов")]
-    public string Message { get; set; }
+    [Display(Name = "Сообщение")]
+    [Required(ErrorMessage = "Напишите сообщение")]
+    [StringLength(500, ErrorMessage = "Максимум 500 символов")]
+    public required string Message { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

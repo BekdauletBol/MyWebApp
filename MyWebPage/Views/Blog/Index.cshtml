@@ -1,0 +1,28 @@
+@model List<BlogPost>
+
+@{
+    ViewData["Title"] = "Блог";
+}
+
+<section class="hero">
+    <span class="hero-label">Blog</span>
+    <h1>Мой <span class="accent">блог</span></h1>
+    <p>Заметки о том, что я изучаю и создаю.</p>
+</section>
+
+<section class="blog-list">
+    @foreach (var post in Model)
+    {
+        <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.Id" class="blog-item">
+            <div class="blog-item-header">
+                @if (!string.IsNullOrEmpty(post.Tag))
+                {
+                    <span class="tag">@post.Tag</span>
+                }
+                <span class="blog-date">@post.CreatedAt.ToString("dd MMM yyyy")</span>
+            </div>
+            <h3>@post.Title</h3>
+            <p>@post.Summary</p>
+        </a>
+    }
+</section>

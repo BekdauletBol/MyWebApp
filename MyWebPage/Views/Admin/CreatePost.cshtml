@@ -1,0 +1,40 @@
+@model BlogPost
+
+@{
+    ViewData["Title"] = "Новая статья";
+}
+
+<section class="admin-header">
+    <h1>Новая статья</h1>
+    <a asp-controller="Admin" asp-action="Blog" class="btn-outline">&larr; Назад</a>
+</section>
+
+<section class="feedback">
+    <form method="post" asp-controller="Admin" asp-action="CreatePost">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" placeholder="Заголовок статьи" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Summary"></label>
+            <textarea asp-for="Summary" placeholder="Краткое описание..." style="min-height: 80px;"></textarea>
+            <span asp-validation-for="Summary"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Content"></label>
+            <textarea asp-for="Content" placeholder="Текст статьи... (параграфы через двойной перенос строки)" style="min-height: 250px;"></textarea>
+            <span asp-validation-for="Content"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Tag"></label>
+            <input asp-for="Tag" placeholder="C#, CSS, ASP.NET..." />
+        </div>
+        <button type="submit">Опубликовать</button>
+    </form>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

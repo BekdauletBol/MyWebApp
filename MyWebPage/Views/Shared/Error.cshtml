@@ -1,17 +1,17 @@
 ﻿@model ErrorViewModel
 @{
-    ViewData["Title"] = "Error";
+    ViewData["Title"] = "Ошибка";
 }
 
-<section class="hero">
+<section class="hero" style="text-align: center; padding-top: 60px;">
     <span class="hero-label">Error</span>
-    <h1>Something went <span class="accent">wrong</span></h1>
-    <p>An error occurred while processing your request.</p>
-
+    <h1>Что-то пошло <span class="accent">не так</span></h1>
+    <p>Произошла ошибка при обработке запроса.</p>
     @if (Model.ShowRequestId)
     {
-        <p style="margin-top: 20px;">
-            <strong>Request ID:</strong> <code>@Model.RequestId</code>
-        </p>
+        <p style="margin-top: 16px;"><strong>Request ID:</strong> <code>@Model.RequestId</code></p>
     }
+    <div class="hero-actions" style="justify-content: center; margin-top: 30px;">
+        <a asp-controller="Home" asp-action="Index" class="btn">На главную</a>
+    </div>
 </section>

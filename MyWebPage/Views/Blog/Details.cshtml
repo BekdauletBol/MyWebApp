@@ -1,0 +1,26 @@
+@model BlogPost
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<article class="blog-detail">
+    <a asp-controller="Blog" asp-action="Index" class="back-link">&larr; Назад к блогу</a>
+
+    <div class="blog-detail-header">
+        @if (!string.IsNullOrEmpty(Model.Tag))
+        {
+            <span class="tag">@Model.Tag</span>
+        }
+        <span class="blog-date">@Model.CreatedAt.ToString("dd MMM yyyy")</span>
+    </div>
+
+    <h1>@Model.Title</h1>
+
+    <div class="blog-content">
+        @foreach (var paragraph in Model.Content.Split("\n\n"))
+        {
+            <p>@paragraph</p>
+        }
+    </div>
+</article>
