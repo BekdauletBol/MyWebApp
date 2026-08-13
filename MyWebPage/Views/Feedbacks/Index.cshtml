@@ -1,54 +1,56 @@
 @model Feedback
 
 @{
-    ViewData["Title"] = "Contacts page";
+    ViewData["Title"] = "Feedbacks";
 }
 
 <section class="feedback">
     <div class="feedback-header">
         <span class="feedback-label">CONTACTS</span>
         <h1>Feedbacks</h1>
-        <p>
-            Have something to say? Send us your feedback.
-        </p>
+        <p>Have something to say? Send us your feedback and we'll get back to you.</p>
     </div>
 
     <form method="post" asp-controller="Feedbacks" asp-action="Check">
+        <div class="form-row">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" placeholder="Your name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname"></label>
+                <input asp-for="Surname" placeholder="Your surname" />
+                <span asp-validation-for="Surname"></span>
+            </div>
+        </div>
 
-        <div class="form-group">
-            <label asp-for="Name">Name</label>
-            <input asp-for="Name" placeholder="Your name" />
-            <span asp-validation-for="Name"></span>
+        <div class="form-row">
+            <div class="form-group">
+                <label asp-for="Age"></label>
+                <input asp-for="Age" type="number" placeholder="Your age" />
+                <span asp-validation-for="Age"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" placeholder="you@example.com" />
+                <span asp-validation-for="Email"></span>
+            </div>
         </div>
 
         <div class="form-group">
-            <label asp-for="Surname">Surname</label>
-            <input asp-for="Surname" placeholder="Your surname" />
-            <span asp-validation-for="Surname"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Age">Age</label>
-            <input asp-for="Age" type="number" placeholder="Your age" />
-            <span asp-validation-for="Age"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Email">Email</label>
-            <input asp-for="Email" type="email" placeholder="you@example.com" />
-            <span asp-validation-for="Email"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Message">Message</label>
+            <label asp-for="Message"></label>
             <textarea asp-for="Message" placeholder="Write your feedback..."></textarea>
             <span asp-validation-for="Message"></span>
         </div>
 
         <button type="submit">
             Send feedback
-            <span>→</span>
+            <span>&rarr;</span>
         </button>
-
     </form>
 </section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

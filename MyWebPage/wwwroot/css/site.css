@@ -139,6 +139,17 @@ a {
   color: var(--accent);
 }
 
+code {
+  padding: 3px 8px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  font-size: 13px;
+  color: var(--accent);
+}
+
 .card {
   padding: 28px;
 
@@ -290,6 +301,125 @@ footer {
   }
 }
 
+/* Hero */
+.hero {
+  padding: 40px 0 60px;
+}
+
+.hero-label {
+  display: inline-block;
+
+  padding: 5px 14px;
+
+  color: var(--accent);
+  background: rgba(255, 107, 53, 0.1);
+
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-top: 24px;
+}
+
+.hero .accent {
+  color: var(--accent);
+}
+
+.hero p {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 18px;
+
+  background: transparent;
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--surface);
+  border-color: #383832;
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+/* Feedback header */
+.feedback-header {
+  margin-bottom: 10px;
+}
+
+.feedback-label {
+  display: inline-block;
+
+  padding: 5px 14px;
+
+  color: var(--accent);
+  background: rgba(255, 107, 53, 0.1);
+
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.feedback-header h1 {
+  margin-top: 18px;
+}
+
+/* Form */
 form {
   width: 100%;
   max-width: 620px;
@@ -300,6 +430,12 @@ form {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 form label {
@@ -365,6 +501,19 @@ form textarea {
 }
 
 @media (max-width: 700px) {
+  .features {
+      grid-template-columns: 1fr;
+  }
+
+  .form-row {
+      grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
   form {
       padding: 24px;
       margin-top: 30px;

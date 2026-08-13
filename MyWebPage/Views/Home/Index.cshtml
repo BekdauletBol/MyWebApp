@@ -1,6 +1,31 @@
 ﻿@{
     ViewData["Title"] = "Main Page";
 }
-<h1>Main Page of site</h1>
 
+<section class="hero">
+    <span class="hero-label">Welcome</span>
+    <h1>We build things<br />that <span class="accent">matter</span></h1>
+    <p>Creative solutions for modern problems. We turn ideas into reality with clean code and bold design.</p>
+    <div class="hero-actions">
+        <a asp-controller="Feedbacks" asp-action="Index" class="btn">Get in touch</a>
+        <a href="#features" class="btn-outline">Learn more</a>
+    </div>
+</section>
 
+<section class="features" id="features">
+    <div class="card">
+        <div class="card-icon">&#9881;</div>
+        <h3>Clean Code</h3>
+        <p>We write maintainable, well-structured code that scales with your business.</p>
+    </div>
+    <div class="card">
+        <div class="card-icon">&#9889;</div>
+        <h3>Fast Performance</h3>
+        <p>Optimized solutions that deliver speed and reliability at every level.</p>
+    </div>
+    <div class="card">
+        <div class="card-icon">&#9733;</div>
+        <h3>Modern Design</h3>
+        <p>Bold, user-focused interfaces that look as good as they perform.</p>
+    </div>
+</section>

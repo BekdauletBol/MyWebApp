@@ -3,21 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - Bum Bum Shaka Taka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <span class="logo">Bum Bum Shaka Taka</span>
+        <a class="logo" asp-controller="Home" asp-action="Index">Bum Bum Shaka Taka</a>
         <nav>
-            <a href="/">Main page</a>
-            <a href="/Feedbacks">Feedbacks</a>
+            <a asp-controller="Home" asp-action="Index">Main page</a>
+            <a asp-controller="Feedbacks" asp-action="Index">Feedbacks</a>
         </nav>
     </header>
     <main>
         @RenderBody()
     </main>
-    <footer>Все права защищены</footer>
+    <footer>&copy; 2026 Bum Bum Shaka Taka. Все права защищены.</footer>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
