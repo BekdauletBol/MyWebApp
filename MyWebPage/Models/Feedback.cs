@@ -22,7 +22,7 @@ namespace MyWebPage.Models;
 
     [Display(Name = "Укажите коммент")]
     [Required(ErrorMessage = "Вам нужно ввести фидбек")]
-    [StringLength(30,ErrorMessage = "Текст не менее 30 символов")]
+    [StringLength(30,ErrorMessage = "Текст менее 30 символов")]
      public string Message { get; set; }
 
 }
